@@ -59,19 +59,14 @@ angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope) {
   $scope.cards = [{
-      title: 'Card for Purchases',
-      number: 'xxxx xxxx xxxx 1234',
-      name: 'Agnes Filtcher',
-      zip: 12345,
-      expiry: '10/18',
-      security: 'xxx'
-    },{
       title: 'Card for Concierge Fee',
       number: 'xxxx xxxx xxxx 5678',
       name: 'Agnes Filtcher',
       zip: 67890,
       expiry: '11/20',
       security: 'xxx'
+  },{
+    title: 'Card for Purchases',
   }]
 
   $scope.approvalThresholdAmount = 500;

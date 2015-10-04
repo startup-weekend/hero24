@@ -1,6 +1,22 @@
 <ion-view view-title="Account">
   <ion-content>
     <ion-list>
+      <div class="card">
+        <div class="item item-divider">
+          Require approval
+        </div>
+        <div class="item item-text-wrap">
+          <div class="item range range-positive">
+            <span>Always</span>
+            <input type="range" min="0" max="1025" step="25" list="steplist" ng-model="approvalThresholdAmount">
+            <span>Never</span>
+          </div>
+        </div>
+        <div class="item item-divider" ng-show="approvalThresholdAmount > 0 && approvalThresholdAmount < 1025">
+          when amount is over ${{approvalThresholdAmount}}
+        </div>
+      </div>
+
       <div class="list list-inset" ng-repeat="card in cards">
         <div class="item item-divider" ng-click="showCard = !showCard">
           {{card.title}}
@@ -19,21 +35,6 @@
         <button class="button button-full button-positive" id="save" ng-show="showCard">
           Save Card
         </button>
-      </div>
-      <div class="card">
-        <div class="item item-divider">
-          Require approval
-        </div>
-        <div class="item item-text-wrap">
-          <div class="item range range-positive">
-            <span>Always</span>
-            <input type="range" min="0" max="1025" step="25" list="steplist" ng-model="approvalThresholdAmount">
-            <span>Never</span>
-          </div>
-        </div>
-        <div class="item item-divider" ng-show="approvalThresholdAmount > 0 && approvalThresholdAmount < 1025">
-          when amount is over ${{approvalThresholdAmount}}
-        </div>
       </div>
     </ion-list>
   </ion-content>
