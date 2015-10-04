@@ -29,6 +29,10 @@
   margin-left: 10px;
 }
 
+.highlighted {
+  color: rgb(56, 126, 245);
+}
+
 .approvalStatus {
   margin-top: 0.5vh;
   font-size: 25px;
