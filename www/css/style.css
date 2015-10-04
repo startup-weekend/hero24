@@ -10,11 +10,12 @@
 }
 
 .txns {
-  margin: 0px 0;
+  margin: 8px 0;
 }
 
 .txn {
-  margin: 10px 0;
+  /*margin: 10px 0;*/
+  /*margin: 4px 0;*/
 }
 
 .cccard {
@@ -22,7 +23,8 @@
 }
 
 #save {
-  margin-top: 0px;
+  margin-top: 1px;
+  margin-bottom: -1px;
 }
 
 #deny {
@@ -39,8 +41,30 @@
   margin-right: 10px;
 }
 
+.approved {
+  color: rgb(56, 126, 245);
+}
+
 .creditcard {
   color: rgb(56, 126, 245);
   font-size: 23px;
   vertical-align: text-top;
+}
+
+.rotate {
+  margin-top: 10px;
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.blue {
+  color: rgb(56, 126, 245);
+}
+
+.splash {
+  background: url('../img/old-woman-on-phone.jpg') no-repeat center center fixed;
+  background-size: cover;
 }

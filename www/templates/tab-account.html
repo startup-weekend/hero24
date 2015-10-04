@@ -7,9 +7,9 @@
         </div>
         <div class="item item-text-wrap">
           <div class="item range range-positive">
-            <span ng-class="{highlighted: approvalThresholdAmount == 0}">Always</span>
+            <span class="rangeWord" ng-class="{highlighted: approvalThresholdAmount == 0}">Always</span>
             <input type="range" min="0" max="1025" step="25" list="steplist" ng-model="approvalThresholdAmount">
-            <span ng-class="{highlighted: approvalThresholdAmount == 1025}">Never</span>
+            <span class="rangeWord" ng-class="{highlighted: approvalThresholdAmount == 1025}">Never</span>
           </div>
         </div>
         <div class="item item-divider" ng-show="approvalThresholdAmount > 0 && approvalThresholdAmount < 1025">
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div class="list list-inset" ng-repeat="card in cards">
+      <div class="card" ng-repeat="card in cards">
         <div class="item item-divider" ng-click="showCard = !showCard">
           <i class="ion-card creditcard"></i> {{card.title}}
         </div>

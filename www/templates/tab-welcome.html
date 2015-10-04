@@ -1,0 +1,17 @@
+<ion-view view-title="Hero24">
+  <ion-content class="splash">
+    <div class="card">
+      <label class="item item-input">
+        <i class="icon ion-ios-person-outline placeholder-icon" ng-show="!email"></i>
+        <i class="icon ion-ios-person placeholder-icon blue" ng-show="email"></i>
+        <input type="text" placeholder="Email" ng-model="email">
+      </label>
+      <label class="item item-input">
+        <i class="icon ion-ios-locked-outline placeholder-icon" ng-show="!password"></i>
+        <i class="icon ion-ios-locked placeholder-icon blue" ng-show="password"></i>
+        <input type="password" placeholder="Password" ng-model="password">
+      </label>
+      <button id="save" class="button button-block button-positive save" ng-click="login()">Log In</button>
+    </div>
+  </ion-content>
+</ion-view>

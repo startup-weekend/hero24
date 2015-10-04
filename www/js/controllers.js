@@ -7,7 +7,16 @@ angular.module('starter.controllers', [])
   })
 })
 
-.controller('DashCtrl', function($scope, $ionicPopup, $timeout) {
+.controller('WelcomeCtrl', function($scope, $state){
+  $scope.email = 'kathy@advertising.com'
+  $scope.password = '231412341234'
+  $scope.login = function(){
+    console.log('going to transactions')
+    $state.go('tab.account')
+  }
+})
+
+.controller('TransactionsCtrl', function($scope, $ionicPopup, $timeout) {
   function randomAmount(max){
     return Math.round(Math.random()*100*max)/100
   }
@@ -42,7 +51,7 @@ angular.module('starter.controllers', [])
     var confirmPopup = $ionicPopup.confirm({
       title: 'Approve this transaction?',
       template: '' +
-        '<div class="item item-divider row" ng-click="showDiv = !showDiv">' +
+        '<div class="item item-divider row">' +
         '  <div class="date col">10/4</div>' +
         '  <div class="description col">Amazon</div>' +
         '  <div class="amount col">$623.99</div>' +
@@ -54,7 +63,7 @@ angular.module('starter.controllers', [])
     });
   };
 
-  $timeout($scope.showConfirm, 2000);
+  $timeout($scope.showConfirm, 1000);
 })
 
 .controller('AccountCtrl', function($scope) {
