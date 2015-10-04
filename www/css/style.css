@@ -16,3 +16,15 @@
 .txn {
   margin: 10px 0;
 }
+
+.cccard {
+  border: blue;
+}
+
+#save {
+  margin-top: 0px;
+}
+
+#deny {
+  margin-left: 10px;
+}

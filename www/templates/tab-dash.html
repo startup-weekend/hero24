@@ -7,7 +7,7 @@
           <div class="description col">{{txn.description}}</div>
           <div class="amount col">${{txn.amount}}</div>
         </div>
-        <div ng-show="showDiv" class="item item-text-wrap">
+        <div ng-show="showDiv || $first" class="item item-text-wrap">
           {{txn.details}}
         </div>
       </div>
