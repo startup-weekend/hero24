@@ -1,41 +1,22 @@
 <ion-view view-title="Account">
   <ion-content>
     <ion-list>
-      <div class="list list-inset">
-        <div class="item item-divider" ng-click="showConciergeCard = !showConciergeCard">
-          Card for Concierge Fee
+      <div class="list list-inset" ng-repeat="card in cards">
+        <div class="item item-divider" ng-click="showCard = !showCard">
+          {{card.title}}
         </div>
-        <label class="item item-input" ng-show="showConciergeCard">
-          <input type="text" placeholder="Card Number">
+        <label class="item item-input" ng-show="showCard">
+          <input type="text" placeholder="Card Number" ng-model="card.number">
         </label>
-        <label class="item item-input" ng-show="showConciergeCard">
-          <input type="text" placeholder="Cardholder Name">
-          <input type="text" placeholder="ZIP Code">
+        <label class="item item-input" ng-show="showCard">
+          <input type="text" placeholder="Cardholder Name" ng-model="card.name">
+          <input type="text" placeholder="ZIP Code" ng-model="card.zip">
         </label>
-        <label class="item item-input" ng-show="showConciergeCard">
-          <input type="text" placeholder="Expiry" value="">
-          <input type="text" placeholder="Security Code">
+        <label class="item item-input" ng-show="showCard">
+          <input type="text" placeholder="Expiry" ng-model="card.expiry">
+          <input type="text" placeholder="Security Code" ng-model="card.security">
         </label>
-        <button class="button button-full button-positive" id="save" ng-show="showConciergeCard">
-          Save Card
-        </button>
-      </div>
-      <div class="list list-inset">
-        <div class="item item-divider" ng-click="showPurchasingCard = !showPurchasingCard">
-          Card for Purchases
-        </div>
-        <label class="item item-input" ng-show="showPurchasingCard">
-          <input type="text" placeholder="Card Number" ng-model="ng">
-        </label>
-        <label class="item item-input" ng-show="showPurchasingCard">
-          <input type="text" placeholder="Cardholder Name">
-          <input type="text" placeholder="ZIP Code">
-        </label>
-        <label class="item item-input" ng-show="showPurchasingCard">
-          <input type="text" placeholder="Expiry">
-          <input type="text" placeholder="Security Code">
-        </label>
-        <button class="button button-full button-positive" id="save" ng-show="showPurchasingCard">
+        <button class="button button-full button-positive" id="save" ng-show="showCard">
           Save Card
         </button>
       </div>

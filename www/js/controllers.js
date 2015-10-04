@@ -1,5 +1,12 @@
 angular.module('starter.controllers', [])
 
+.controller('tabCtrl', function($scope){
+  $scope.txnAlertCount = 1
+  $scope.$on('decrementTxnAlert', function(){
+    $scope.txnAlertCount = 0
+  })
+})
+
 .controller('DashCtrl', function($scope, $ionicPopup, $timeout) {
   function randomAmount(max){
     return Math.round(Math.random()*100*max)/100
@@ -17,9 +24,8 @@ angular.module('starter.controllers', [])
   }
 
   $scope.txns = [
-    {date:'10/4', description:'Amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
-    {date:'10/3', description:'Instacart', amount: randomAmount(100), details: generateDetails(2)},
-    {date:'10/2', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'10/3', description:'Amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'10/2', description:'Instacart', amount: randomAmount(100), details: generateDetails(2)},
     {date:'10/1', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
     {date:'9/30', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
     {date:'9/29', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
@@ -43,11 +49,8 @@ angular.module('starter.controllers', [])
         '</div>'
     });
     confirmPopup.then(function(res) {
-      if(res) {
-        console.log('You are sure');
-      } else {
-        console.log('You are not sure');
-      }
+      $scope.txns.unshift({date:'10/4', description:'Amazon', amount: 623.99, details: 'manic behavior, possible shopping spree alert.'})
+      $scope.$emit('decrementTxnAlert');
     });
   };
 
@@ -55,21 +58,21 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  $scope.conciergeCard = {
-    number: '1234 5678 1234 5678',
-    name: 'Agnes Filtcher',
-    zip: 12345,
-    expiry: '10/18',
-    security: 123
-  }
-
-  $scope.conciergeCard = {
-    number: '1234 5678 1234 5678',
-    name: 'Agnes Filtcher',
-    zip: 12345,
-    expiry: '10/18',
-    security: 123
-  }
+  $scope.cards = [{
+      title: 'Card for Purchases',
+      number: 'xxxx xxxx xxxx 1234',
+      name: 'Agnes Filtcher',
+      zip: 12345,
+      expiry: '10/18',
+      security: 'xxx'
+    },{
+      title: 'Card for Concierge Fee',
+      number: 'xxxx xxxx xxxx 5678',
+      name: 'Agnes Filtcher',
+      zip: 67890,
+      expiry: '11/20',
+      security: 'xxx'
+  }]
 
   $scope.approvalThresholdAmount = 500;
 });
