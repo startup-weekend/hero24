@@ -1,26 +1,14 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Transactions">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
+    <div class="list">
+      <div class="card txns" ng-repeat="txn in txns">
+        <div class="item item-divider row" ng-click="showDiv = !showDiv">
+          <div class="date col">{{txn.date}}</div>
+          <div class="description col">{{txn.description}}</div>
+          <div class="amount col">${{txn.amount}}</div>
         </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
+        <div ng-show="showDiv" class="item item-text-wrap">
+          {{txn.details}}
         </div>
       </div>
     </div>

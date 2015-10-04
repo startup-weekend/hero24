@@ -1,1 +1,18 @@
 /* Empty. Add your own CSS if you like */
+.date {
+  color: grey;
+}
+
+.description {
+}
+
+.amount {
+}
+
+.txns {
+  margin: 0px 0;
+}
+
+.txn {
+  margin: 10px 0;
+}

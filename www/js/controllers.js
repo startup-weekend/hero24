@@ -1,6 +1,25 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+  function randomAmount(max){
+    return Math.round(Math.random()*100*max)/100
+  }
+  $scope.txns = [
+    {date:'10/4', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'10/3', description:'instacart', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'10/2', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'10/1', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/30', description:'instacart', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/29', description:'instacart', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/28', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/27', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/26', description:'instacart', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/25', description:'instacart', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/24', description:'instacart', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/23', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'9/22', description:'amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'}
+  ];
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
