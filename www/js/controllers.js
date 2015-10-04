@@ -24,18 +24,18 @@ angular.module('starter.controllers', [])
   }
 
   $scope.txns = [
-    {date:'10/3', description:'Amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
-    {date:'10/2', description:'Instacart', amount: randomAmount(100), details: generateDetails(2)},
-    {date:'10/1', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/30', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/29', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/28', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/27', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/26', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/25', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/24', description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/23', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
-    {date:'9/22', description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)}
+    {date:'10/3', approved:true, description:'Amazon', amount: randomAmount(100), details: 'feeling tired today. forgot to take meds in AM.'},
+    {date:'10/2', approved:true, description:'Instacart', amount: randomAmount(100), details: generateDetails(2)},
+    {date:'10/1', approved:false, description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/30', approved:true, description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/29', approved:true, description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/28', approved:true, description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/27', approved:true, description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/26', approved:false, description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/25', approved:true, description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/24', approved:true, description:'Instacart', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/23', approved:true, description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)},
+    {date:'9/22', approved:true, description:'Amazon', amount: randomAmount(100), details: generateDetails(Math.random()*3)}
   ];
 
   $scope.showConfirm = function() {
@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
         '</div>'
     });
     confirmPopup.then(function(res) {
-      $scope.txns.unshift({date:'10/4', description:'Amazon', amount: 623.99, details: 'manic behavior, possible shopping spree alert.'})
+      $scope.txns.unshift({date:'10/4', approved:true, description:'Amazon', amount: 623.99, details: 'manic behavior, possible shopping spree alert.'})
       $scope.$emit('decrementTxnAlert');
     });
   };

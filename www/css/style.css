@@ -28,3 +28,15 @@
 #deny {
   margin-left: 10px;
 }
+
+.approvalStatus {
+  margin-top: 0.5vh;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.creditcard {
+  color: rgb(56, 126, 245);
+  font-size: 23px;
+  vertical-align: text-top;
+}

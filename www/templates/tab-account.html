@@ -19,7 +19,7 @@
 
       <div class="list list-inset" ng-repeat="card in cards">
         <div class="item item-divider" ng-click="showCard = !showCard">
-          {{card.title}}
+          <i class="ion-card creditcard"></i> {{card.title}}
         </div>
         <label class="item item-input" ng-show="showCard">
           <input type="text" placeholder="Card Number" ng-model="card.number">
